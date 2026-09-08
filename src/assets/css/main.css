@@ -1,0 +1,45 @@
+/* main.css — HDD Tecnologia Store V2 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .35s ease-out, transform .35s ease-out;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+}
+
+/* Custom properties */
+:root {
+  --bg: #050b18;
+  --bg2: #0a1628;
+  --card: rgba(255,255,255,.045);
+  --line: rgba(96,165,250,.18);
+  --tx: #e8eefc;
+  --mut: #93a4c4;
+  --dim: #64748b;
+  --acc: #38bdf8;
+  --acc2: #2563eb;
+  --ok: #25d366;
+  --gold: #fbbf24;
+  --r: 18px;
+  --f: 'Inter', system-ui, sans-serif;
+  --d: 'Orbitron', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--acc2), var(--acc)); border-radius: 9px; }
+
+/* Selection */
+::selection { background: rgba(56,189,248,.35); }
+
+/* Focus visible */
+*:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
