@@ -1,6 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#050b18;--bg2:#0a1628;--card:rgba(255,255,255,.045);--line:rgba(96,165,250,.18);--tx:#e8eefc;--mut:#93a4c4;--dim:#64748b;--acc:#38bdf8;--acc2:#2563eb;--ok:#25d366;--gold:#fbbf24;--r:18px;--f:'Inter',system-ui,sans-serif;--d:'Orbitron',monospace}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+section[id]{scroll-margin-top:80px}
 body{font-family:var(--f);background:radial-gradient(1000px 500px at 80% -10%,rgba(37,99,235,.18),transparent),radial-gradient(800px 400px at 10% 20%,rgba(56,189,248,.1),transparent),var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -60,7 +61,8 @@ h1{font-family:var(--d);font-size:clamp(30px,4.6vw,54px);line-height:1.08;margin
 .terminal .ln{opacity:0;animation:lnIn .3s forwards}
 @keyframes lnIn{to{opacity:1}}
 .caret{animation:caret .8s step-end infinite;color:var(--acc)}
-.card-foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:14px 16px;text-align:center}
+.card-foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:14px 16px;text-align:center;justify-items:center}
+.card-foot > div{text-align:center}
 .card-foot small{display:block;font-size:10px;letter-spacing:1px;color:var(--dim);text-align:center}.card-foot b{font-size:13px;text-align:center;display:block}.ok{color:var(--ok)}
 .float{position:absolute;padding:9px 14px;font-size:12px;font-weight:700;border-radius:99px;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:fl 3.4s ease-in-out infinite}
 .f1{top:6%;right:2%}.f2{bottom:20%;right:-2%;animation-delay:.7s}.f3{bottom:2%;left:6%;animation-delay:1.3s}
