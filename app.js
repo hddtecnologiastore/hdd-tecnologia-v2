@@ -73,6 +73,8 @@ function closeM(m){m.classList.remove("open");m.setAttribute("aria-hidden","true
 $$("[data-open]").forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-open");if(b.getAttribute("data-svc")){var s=$("#svcType");if(s)s.value=b.getAttribute("data-svc")}openM(id)})});
 $$(".ov").forEach(function(m){m.addEventListener("click",function(e){if(e.target===m)closeM(m)})});$$("[data-close]").forEach(function(b){b.addEventListener("click",function(){closeM(b.closest(".ov"))})});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")$$(".ov.open").forEach(closeM)});
+/* Cookies: solo técnicas, banner mínimo */
+(function(){var bar=$("#cookieBar"),ok=$("#cookieOk");if(!bar||!ok)return;try{if(localStorage.getItem("hdd_cookie")==="1"){return}bar.classList.add("show");ok.addEventListener("click",function(){localStorage.setItem("hdd_cookie","1");bar.classList.remove("show")})}catch(e){}})();
 /* Form servicio → WhatsApp */
 var sf=$("#svcForm");
 if(sf)sf.addEventListener("submit",function(e){e.preventDefault();var err=$("#svcErr");err.hidden=true;var n=$("#svcName").value.trim(),ph=$("#svcPhone").value.replace(/\D/g,""),ty=$("#svcType").value,ms=$("#svcMsg").value.trim();
